@@ -7,13 +7,13 @@ function TodolistUI({task,arr,handlesubmit,handleTaskChange}) {
     <>
     <div className='mt-3'>
         <h1 className='mb-3 border-bottom'>To Do List</h1>
-      <form action="" onSubmit={handlesubmit} className='d-flex gap-4'>
+      <form onSubmit={(e) => handlesubmit(e)} className='d-flex gap-4'>
         <input type="text" placeholder='Enter task' onChange={handleTaskChange} className='form-control'/>
         <input type="submit" value="Add" className='btn btn-primary' />
       </form>
     </div>
     <div>
-    {arr.map((el) => (
+    {arr && arr.map((el) => (
           <div key={el.id} className='d-flex w-100 justify-content-between mt-3 border-bottom border-black py-3'>
             <h4>{el.task}</h4>
             <div className="btn-group d-flex">
